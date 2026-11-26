@@ -4,17 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Omar Osman — مصمم جرافيك ومطوّر مواقع</title>
-<meta name="description" content="Omar Osman, graphic designer and web developer working with brands in Egypt and the Gulf">
+<meta name="description" content="Omar Osman, graphic designer and web developer working on projects for brands in Egypt and the Gulf">
 <meta name="theme-color" content="#0B0C14">
 <link rel="icon" href="assets/img/favicon.png">
 <link rel="preload" href="fonts/thmanyahsans-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/thmanyahsans-Black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/img/omar.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preload" href="assets/img/logo.webp" as="image" type="image/webp">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="pre" id="pre"><img src="assets/img/logo.webp" alt="Omar Osman" width="900" height="477"><b id="cnt">0</b></div>
 <div class="prog" id="prog"></div>
-<canvas id="trail"></canvas><div class="orb" id="orb"><span id="orbL"></span></div>
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i><b class="spot" id="spot"></b></div>
+<canvas id="trail"></canvas><div class="orb" id="orb"><i id="orbB"></i><span id="orbL"></span></div><div class="cdot" id="dot"></div>
 <div class="grain"></div>
 
 <div class="strip" id="strip"><div class="mq" data-speed="0.6"><div class="mq-in">
@@ -29,6 +32,7 @@
     <a href="#top" data-ar="الرئيسية" data-en="Home"></a>
     <a href="#services" data-ar="خدماتي" data-en="Services"></a>
     <a href="#work" data-ar="أعمالي" data-en="Work"></a>
+    <a href="#pricing" data-ar="الباقات" data-en="Pricing"></a>
     <a href="#about" data-ar="عني" data-en="About"></a>
     <a href="#contact" data-ar="تواصل" data-en="Contact"></a>
   </nav>
@@ -38,7 +42,7 @@
 </header>
 <div class="menu" id="menu">
   <a href="#top" data-ar="الرئيسية" data-en="Home"></a><a href="#services" data-ar="خدماتي" data-en="Services"></a>
-  <a href="#work" data-ar="أعمالي" data-en="Work"></a><a href="#about" data-ar="عني" data-en="About"></a>
+  <a href="#work" data-ar="أعمالي" data-en="Work"></a><a href="#pricing" data-ar="الباقات" data-en="Pricing"></a><a href="#about" data-ar="عني" data-en="About"></a>
   <a href="#contact" data-ar="تواصل" data-en="Contact"></a>
 </div>
 
@@ -46,7 +50,7 @@
 <section class="hero">
   <div class="hero-txt">
     <h1 class="split" id="h1" data-ar="براندك يستحق إنه يتشاف صح" data-en="Your brand deserves to be seen right" data-hl="يتشاف|seen"></h1>
-    <p class="lead" data-ar="أنا مصمم جرافيك ومطوّر مواقع، أشتغل مع براندات في مصر والخليج" data-en="I'm a graphic designer and web developer working with brands in Egypt and the Gulf"></p>
+    <p class="lead" data-ar="أنا مصمم جرافيك ومطوّر مواقع، أشتغل على مشاريع لبراندات في مصر والخليج" data-en="I'm a graphic designer and web developer working on projects for brands in Egypt and the Gulf"></p>
     <div class="hero-cta">
       <a class="btn wa" data-mag data-ar="كلّمني على واتساب" data-en="Message me on WhatsApp" href="#"></a>
       <a class="link" href="#work" data-ar="شوف الشغل" data-en="See the work"></a>
@@ -59,7 +63,7 @@
       <div class="face front">
         <div class="clip"></div>
         <div class="c-top"><span>DESIGNER</span><span class="out">WEB</span></div>
-        <img class="c-photo" src="assets/img/omar.webp" alt="" width="900" height="1125" draggable="false">
+        <img class="c-photo" src="assets/img/omar.webp" alt="" fetchpriority="high" decoding="async" width="900" height="1125" draggable="false">
         <div class="c-name"><img src="assets/img/logo.webp" alt="" draggable="false"></div>
         <div class="c-band" data-ar="أعمالي" data-en="PORTFOLIO"></div>
       </div>
@@ -80,7 +84,8 @@
 
 <section class="services" id="services">
   <h2 class="h2" data-ar="اللي أقدر أعمله لك" data-en="What I can do for you"></h2>
-  <div class="rows" id="rows"></div>
+  
+  <div class="svc4" id="svc4"></div>
 </section>
 
 <section class="work" id="work">
@@ -95,16 +100,25 @@
   <div class="tl" id="tl"><i class="tl-line" id="tlLine"></i></div>
 </section>
 
+<section class="pricing" id="pricing">
+  <h2 class="h2" data-ar="الباقات والأسعار" data-en="Packages &amp; pricing"></h2>
+  <p class="lead" data-ar="أسعار واضحة من البداية، وتعرف بالضبط إيش اللي بتستلمه" data-en="Clear prices from the start, so you know exactly what you get"></p>
+  <div class="curbar"><label for="cur" data-ar="العملة" data-en="Currency"></label><select id="cur" aria-label="Currency"></select></div>
+  <div class="plans" id="plans"></div>
+  <p class="also" id="also"></p>
+  <p class="pnote" id="pnote"></p>
+</section>
+
 <section class="about" id="about">
   <div class="about-img"><img src="assets/img/omar.webp" alt="Omar Osman" width="900" height="1125" loading="lazy"></div>
   <div class="about-txt">
     <h2 class="h2" data-ar="أنا عمر" data-en="I'm Omar"></h2>
     <!-- REVIEW BY OMAR: if there is a real reason you moved from design to web, add one sentence for it here -->
-    <p class="lead" data-ar="مصمم جرافيك ومصمم مواقع، ولي ثلاث سنوات في المجال" data-en="Graphic and web designer, three years in the field"></p>
-    <p data-ar="أشتغل مع أصحاب مشاريع وبراندات من مصر والسعودية والإمارات وباقي دول الخليج" data-en="I work with business owners and brands from Egypt, Saudi Arabia, the UAE and the rest of the Gulf"></p>
+    <p class="lead" data-ar="مصمم جرافيك ومصمم مواقع، وبشتغل في التصميم من 2025" data-en="Graphic and web designer, designing since 2025"></p>
+    <p data-ar="أشتغل على مشاريع لبراندات وأصحاب أعمال في مصر والخليج" data-en="I work on projects for brands and business owners in Egypt and the Gulf"></p>
     <p data-ar="قبل ما أفتح أي برنامج، أجلس وأفهم البراند وصاحبه، لأن التصميم الصح يبدأ من الفهم مش من الألوان" data-en="Before I open any software, I sit down and understand the brand and its owner, because good design starts with understanding, not colors"></p>
     <p data-ar="بعدها أصمم، وأبني، وأراجع كل تفصيلة لين يطلع الشغل زي ما لازم" data-en="Then I design, build, and review every detail until the work is right"></p>
-    <div class="tools"><b data-ar="3 سنوات خبرة" data-en="3 years of experience"></b>
+    <div class="tools"><b data-ar="بشتغل في المجال من 2025" data-en="Designing since 2025"></b>
       <!-- TODO OMAR: replace "Web Development" with the exact coding tools -->
       <span>Photoshop</span><span>Illustrator</span><span>DaVinci Resolve</span><span>Figma</span><span>Canva</span><span>Web Development</span></div>
   </div>
@@ -117,6 +131,7 @@
   <div class="cd" id="cd"><small data-ar="باقي على انتهاء العرض" data-en="Time left on the offer"></small>
     <div class="cd-n"><div><b id="cdD">00</b><span data-ar="يوم" data-en="days"></span></div><div><b id="cdH">00</b><span data-ar="ساعة" data-en="hours"></span></div><div><b id="cdM">00</b><span data-ar="دقيقة" data-en="min"></span></div><div><b id="cdS">00</b><span data-ar="ثانية" data-en="sec"></span></div></div></div>
   <div class="paths" id="paths"></div>
+  <a class="btn ghost" data-mag href="#pricing" data-ar="شوف الباقات" data-en="See the packages"></a>
   <p class="close" id="offerClose" data-ar="احجز مكانك قبل ما الوقت يخلص" data-en="Book your spot before time runs out"></p>
 </section>
 
